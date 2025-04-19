@@ -17,11 +17,10 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>21</maven.compiler.release>
-        <!-- 和你的 JDK 版本保持一致 -->
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <!-- 指定 JavaFX 版本 -->
         <javafx.version>21</javafx.version>
+        <javafx.platform>win</javafx.platform>
     </properties>
 
     <dependencyManagement>
@@ -44,14 +43,14 @@
             <version>2.17.2</version>
         </dependency>
 
-        <!-- JavaFX UI 控件 -->
+        <!-- JavaFX UI Core Controls -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>21.0.2</version>
         </dependency>
 
-        <!-- 如果你用 FXML，还需要加上这个 -->
+        <!-- FXML verwenden, müssen Sie außerdem Folgendes hinzufügen -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>

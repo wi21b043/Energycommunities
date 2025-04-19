@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 public class GuiApplication extends Application {
     @Override
     public void start(Stage stage) {
-        Label label = new Label("GUI 界面启动成功！");
+        Label label = new Label("GUI Das Interface wurde erfolgreich gestartet!");
         Scene scene = new Scene(label, 400, 200);
         stage.setScene(scene);
         stage.setTitle("Energy Communities GUI");
