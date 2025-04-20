@@ -34,3 +34,26 @@ Dieses Projekt verwendet die Maven-Multimodulstruktur und enthält die folgenden
        <mainClass>at.technikum.energycommunities.gui.GuiApplication</mainClass>
        ```
     4. führen `mvn javafx:run` erneut aus und die GUI wird normal angezeigt.
+
+### Creating Package Structures
+- Paket unter rest-api/src/main/java/at.technikum.energycommunities.restApi erstellen .controller、.dto、.service.
+
+**DTO
+1. Erstellen CurrentEnergyDto.java und HistoricalEnergyDto.java: Datenfelder definieren und Zeitformatierung mit @JsonFormat sicherstellen.
+
+**Service
+2. Fügen EnergyService.java zum Service-Paket hinzu, annotieren es mit @Service und implementieren die beiden Schnittstellenmethoden getCurrentEnergy(), getHistoricalEnergy(...).
+
+**Controller
+3. (1)Fügen eine neue EnergyCommunitiesController.java im Controller-Paket mit @RestController, @RequestMapping(„/energy“) hinzu und injizieren EnergyService über den Konstruktor.
+   (2)Hinzufügen von @GetMapping zu beiden GET-Schnittstellen, Binden von URL-Parametern und Aufrufen des Dienstes zur Rückgabe von DTOs.
+
+**Konfiguration und Prüfung
+4. RestApiApplication in der IDE ausführen (Hauptklasse mit @SpringBootApplication)
+
+
+**Getestet auf einer Webseite
+
+5. "http://localhost:8080/energy/current"
+
+"http://localhost:8080/energy/historical?start=2025-04-19T10:00:00&end=2025-04-19T12:00:00"
