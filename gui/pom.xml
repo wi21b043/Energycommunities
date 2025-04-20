@@ -8,6 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
+
     <artifactId>gui</artifactId>
 
     <name>gui</name>
@@ -36,7 +37,7 @@
     </dependencyManagement>
 
     <dependencies>
-
+        <!-- Jackson für JSON-Parsing -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -44,10 +45,12 @@
         </dependency>
 
         <!-- JavaFX UI Core Controls -->
+        <!-- JavaFX-Abhängigkeiten-->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>21.0.2</version>
+            <classifier>win</classifier>
         </dependency>
 
         <!-- FXML verwenden, müssen Sie außerdem Folgendes hinzufügen -->
@@ -55,6 +58,7 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>21.0.2</version>
+            <classifier>win</classifier>
         </dependency>
 
         <dependency>

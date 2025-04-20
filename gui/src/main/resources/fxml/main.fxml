@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="at.technikum.energycommunities.gui.controller.EnergyGuiController"
+            prefWidth="600" prefHeight="400">
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <HBox spacing="10">
+                <Button text="Get current percentage" onAction="#onFetchCurrent"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Starting time (ISO)"/>
+                <TextField fx:id="startField" promptText="yyyy-MM-ddTHH:mm:ss"/>
+                <Label text="Ending time (ISO)"/>
+                <TextField fx:id="endField" promptText="yyyy-MM-ddTHH:mm:ss"/>
+                <Button text="Getting Historical Data" onAction="#onFetchHistorical"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane prefHeight="300" prefWidth="580">
+
+            <Tab text="Current percentage">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+
+                    <Label fx:id="currentLabel" text="Not yet available"/>
+                </VBox>
+            </Tab>
+
+            <Tab text="Historical data">
+                <TableView fx:id="historyTable" prefHeight="280" prefWidth="560">
+                    <columns>
+                        <TableColumn text="hour" fx:id="colHour" prefWidth="200"/>
+                        <TableColumn text="Community use" fx:id="colCommunityUse" prefWidth="180"/>
+                        <TableColumn text="Grid use" fx:id="colGridUse" prefWidth="180"/>
+                    </columns>
+                </TableView>
+            </Tab>
+
+        </TabPane>
+    </center>
+
+</BorderPane>
