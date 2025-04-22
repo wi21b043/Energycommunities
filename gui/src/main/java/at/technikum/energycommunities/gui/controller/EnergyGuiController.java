@@ -29,7 +29,7 @@ public class EnergyGuiController {
 
     @FXML
     public void initialize() {
-        // 初始化表格列绑定 model 属性
+        // Initialisiere die Verbindung zwischen den Spalten der Tabelle und den Attributen des Modells
         colHour.setCellValueFactory(new PropertyValueFactory<>("hour"));
         colCommunityUse.setCellValueFactory(new PropertyValueFactory<>("communityUsed"));
         colGridUse.setCellValueFactory(new PropertyValueFactory<>("gridUsed"));

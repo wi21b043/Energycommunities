@@ -21,7 +21,7 @@ public class EnergyCommunitiesController {
 
     /**
      * GET /energy/current
-     * 返回当前小时的百分比数据
+     * Gibt die Prozentsatz-Daten der aktuellen Stunde zurück.
      */
     @GetMapping("/current")
     public CurrentEnergyDto getCurrent() {
@@ -30,7 +30,7 @@ public class EnergyCommunitiesController {
 
     /**
      * GET /energy/historical?start=...&end=...
-     * 返回指定时间区间内的小时级历史数据
+     * Gibt die stündlichen historischen Daten für den angegebenen Zeitraum zurück.
      */
     @GetMapping("/historical")
     public List<HistoricalEnergyDto> getHistorical(
