@@ -44,6 +44,12 @@
             <version>2.17.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.6.0</version>
+        </dependency>
+
         <!-- JavaFX UI Core Controls -->
         <!-- JavaFX-Abhängigkeiten-->
         <dependency>
