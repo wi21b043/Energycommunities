@@ -1,47 +1,19 @@
-package at.technikum.energycommunities.restApi.controller;
+package at.technikum.energycommunities.restapi.controller;
 
-import at.technikum.energycommunities.restApi.dto.CurrentEnergyDto;
-import at.technikum.energycommunities.restApi.dto.HistoricalEnergyDto;
-import at.technikum.energycommunities.restApi.service.EnergyService;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDateTime;
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/energy")
 public class EnergyCommunitiesController {
 
-    private final EnergyService energyService;
-
-    public EnergyCommunitiesController(EnergyService energyService) {
-        this.energyService = energyService;
+    @GetMapping("/energy/current")
+    public String getCurrent() {
+        return "Aktuelle Prozentwerte: 100% verbraucht, 5% vom Netz";
     }
 
-    /**
-     * GET /energy/current
-     * Gibt die Prozentsatz-Daten der aktuellen Stunde zurück.
-     */
-    @GetMapping("/current")
-    public CurrentEnergyDto getCurrent() {
-        return energyService.getCurrentEnergy();
-    }
-
-    /**
-     * GET /energy/historical?start=...&end=...
-     * Gibt die stündlichen historischen Daten für den angegebenen Zeitraum zurück.
-     */
-    @GetMapping("/historical")
-    public List<HistoricalEnergyDto> getHistorical(
-            @RequestParam("start")
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-            LocalDateTime start,
-
-            @RequestParam("end")
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-            LocalDateTime end) {
-        return energyService.getHistoricalEnergy(start, end);
+    @GetMapping("/energy/historical")
+    public String getHistorical(@RequestParam String start, @RequestParam String end) {
+        return "Historische Daten von " + start + " bis " + end;
     }
 }
-

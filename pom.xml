@@ -27,7 +27,6 @@
         <module>energyproducer</module>
         <module>energyuser</module>
         <module>usageservice</module>
-        <module>percentagesevice</module>
         <module>restApi</module>
         <module>gui</module>
     </modules>
@@ -46,6 +45,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
